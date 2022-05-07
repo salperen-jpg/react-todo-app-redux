@@ -1,13 +1,74 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans&family=Moon+Dance&family=Open+Sans&family=Roboto:wght@400;700&display=swap');
+
+:root {
+  --font-primary: 'Josefin Sans', sans-serif;
+  --Very--Light--Gray: hsl(0, 0%, 98%);
+  --Very-Light--Grayish-Blue: hsl(236, 33%, 92%);
+  --Light-grayish-Blue: hsl(233, 11%, 84%);
+  --Dark-Grayish-Blue: hsl(236, 9%, 61%);
+  --Very-Dark-Grayish-Blue: hsl(235, 19%, 35%);
+  --Bright-Blue: hsl(220, 98%, 61%);
+  --Check-Background: linear-gradient hsl(192, 100%, 67%) to hsl(280, 87%, 65%);
+  /* DARK THEME COLOR  */
+  --Very-Dark-Blue: hsl(235, 21%, 11%);
+  --Very-Dark-Desaturated-Blue: hsl(235, 24%, 19%);
+  --Light-Grayish-Blue: hsl(234, 39%, 85%);
+  --Light-Grayish-Blue-hover: hsl(236, 33%, 92%);
+  --Dark-Grayish-Blue: hsl(234, 11%, 52%);
+  --Very-Dark-Grayish-Blue: hsl(233, 14%, 35%);
+  --Very-Dark-Grayish-Blue: hsl(237, 14%, 26%);
+  --main-white: #fff;
+  --main-black: #000;
+  --max-width: 30rem;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+/* THEMES */
+.ligth-theme {
+  --Very--Light--Gray: hsl(0, 0%, 98%);
+  --Very-Light--Grayish-Blue: hsl(236, 33%, 92%);
+  --Light-grayish-Blue: hsl(233, 11%, 84%);
+  --Dark-Grayish-Blue: hsl(236, 9%, 61%);
+  --Very-Dark-Grayish-Blue: hsl(235, 19%, 35%);
+  --Bright-Blue: hsl(220, 98%, 61%);
+  --Check-Background: hsl(192, 100%, 67%) to hsl(280, 87%, 65%);
+  --main-white: #fff;
+}
+.dark-theme {
+  --Very-Light--Grayish-Blue: hsl(235, 21%, 11%);
+  --main-white: hsl(235, 24%, 19%);
+  --main-black: #fff;
+}
+
+*,
+::after,
+::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-size: 18px;
+  font-family: 'Josefin Sans', sans-serif;
+  background: var(--Very-Light--Grayish-Blue);
+  color: var(--main-black);
+}
+ul {
+  list-style: none;
+}
+a {
+  text-decoration: none;
+}
+main {
+  min-height: 100vh;
+}
+img {
+  width: 100%;
+  display: block;
+}
+
+/* MORE GLOBAL CLASSES */
+.section-center {
+  width: 90vw;
+  margin: 0 auto;
+  max-width: 30rem;
 }

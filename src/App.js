@@ -1,24 +1,22 @@
-import logo from './logo.svg';
-import './App.css';
+import { useSelector } from 'react-redux';
+import Hero from './components/Hero';
+import TodoContainer from './components/TodoContainer';
+import { useEffect } from 'react';
 
 function App() {
+  const { lightTheme } = useSelector((store) => store.theme);
+
+  useEffect(() => {
+    document.documentElement.className = `${
+      lightTheme ? 'ligth-theme' : 'dark-theme'
+    }`;
+  }, [lightTheme]);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <Hero />
+      <TodoContainer />
+    </>
   );
 }
 
