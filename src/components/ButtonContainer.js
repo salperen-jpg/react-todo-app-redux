@@ -8,9 +8,20 @@ const ButtonContainer = () => {
   const { todos } = useSelector((store) => store.todo);
   const dispatch = useDispatch();
 
+  const checkLeft = () => {
+    const todoList = todos.filter((todo) => todo.done === false);
+    if (todoList.length === 0) {
+      return 'No todo found';
+    }
+    return `${todoList.length} item left`;
+  };
+
+  React.useEffect(() => {
+    checkLeft();
+  }, [todos]);
   return (
     <Wrapper>
-      <span>{todos.length} items left</span>
+      <span>{checkLeft()} </span>
       <div className='button-container'>
         {buttons.map((button) => {
           return (

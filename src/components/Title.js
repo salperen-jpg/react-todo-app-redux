@@ -16,9 +16,9 @@ const Title = () => {
         onClick={() => dispatch(toggleTheme())}
       >
         {lightTheme === true ? (
-          <img src={moon} className='icon' />
+          <img src={moon} alt='moon' className='icon' />
         ) : (
-          <img src={sun} className='icon' />
+          <img src={sun} alt='sun' className='icon' />
         )}
       </button>
     </Wrapper>

@@ -1,4 +1,6 @@
 import { createSlice } from '@reduxjs/toolkit';
+import { setLocalStorage } from '../../localStorage/localStorage';
+
 import { initialState } from './initialState';
 
 export const todoSlice = createSlice({
@@ -10,10 +12,11 @@ export const todoSlice = createSlice({
     },
     handleSubmit: (state) => {
       const newTodo = {
-        id: new Date().getDate().toString(),
+        id: new Date().getTime().toString(),
         title: state.todo,
         done: false,
       };
+      setLocalStorage(state.todos);
       state.todos = [...state.todos, newTodo];
       state.todo = '';
     },
@@ -36,15 +39,9 @@ export const todoSlice = createSlice({
     },
     toggleFinished: (state, action) => {
       console.log(action.payload);
-      const newArray = state.todos.map((todo) => {
-        if (todo.id === action.payload) {
-          todo.done = !todo.done;
-          return todo;
-        } else {
-          return todo;
-        }
-      });
-      state.todos = newArray;
+
+      const specItem = state.todos.find((todo) => todo.id === action.payload);
+      specItem.done = !specItem.done;
     },
   },
 });
